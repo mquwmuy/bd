@@ -1,0 +1,31 @@
+create role rl_pharmacist with password 'Pa$$w0rd';
+alter role rl_pharmacist LOGIN;
+grant connect on database "studding_process_d8" to rl_pharmacist;
+
+create role rl_worker with password 'Pa$$w0rd';
+alter role rl_worker LOGIN;
+grant connect on database "studding_process_d8" to rl_worker;
+
+create role rl_manufacturer with password 'Pa$$w0rd';
+alter role rl_manufacturer LOGIN;
+grant connect on database "studding_process_d8" to rl_manufacturer;
+
+create role rl_administrator with password 'Pa$$w0rd';
+alter role rl_administrator LOGIN;
+grant connect on database "studding_process_d8" to rl_administrator;
+
+
+
+
+
+select * from pg_roles where rolname in ('rl_pharmacist ', 'rl_worker ', 'rl_manufacturer ', 'rl_client ', 'rl_administrator');
+
+
+
+
+SELECT datname FROM pg_catalog.pg_database
+where datname = 'studding_process_db';
+
+
+
+create database Studding_Process_D8
